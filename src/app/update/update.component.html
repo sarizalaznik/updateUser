@@ -1,0 +1,54 @@
+<div class="container">
+    <form class="form-container">
+        <div class="form-fields">
+            <mat-form-field appearance="fill">
+                <mat-label>תעודת זהות</mat-label>
+                <input matInput type="text" id="id" name="id" [(ngModel)]="id" required pattern="[0-9]{9}" #idField="ngModel">
+                <mat-error *ngIf="idField.invalid && (idField.dirty || idField.touched)">
+                <div *ngIf="idField.errors?.['required']">תעודת זהות היא שדה חובה</div>
+                <div *ngIf="idField.errors?.['pattern']">תעודת זהות חייבת להכיל 9 ספרות בלבד</div>
+                </mat-error>
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>שם פרטי</mat-label>
+                <input matInput type="text" id="first_name" name="first_name" [(ngModel)]="first_name">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>שם משפחה</mat-label>
+                <input matInput type="text" id="last_name" name="last_name" [(ngModel)]="last_name">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>כתובת מייל</mat-label>
+                <input matInput type="email" id="email" name="email" [(ngModel)]="email">
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="fill">
+                <mat-label>כתובת מייל</mat-label>
+                <input matInput type="email" id="email" name="email" [(ngModel)]="email"
+                       placeholder="xxx@example.com"
+                       [formControl]="email"
+                       (blur)="updateErrorMessage()"
+                       required>
+                @if (email.invalid) {
+                  <mat-error>{{errorMessage}}</mat-error>
+                }
+            </mat-form-field> -->
+        
+            <mat-form-field appearance="fill">
+                <mat-label>נייד</mat-label>
+                <input matInput type="tel" id="phone" name="phone" [(ngModel)]="phone">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>עיר</mat-label>
+                <input matInput type="text" id="city" name="city" [(ngModel)]="city">
+            </mat-form-field>
+        </div>
+  
+      <button mat-raised-button class="login-button" color="primary" type="submit" [disabled]="!idField.valid" (click)="updateUser()">עדכן</button>
+    </form>
+  </div>
+  

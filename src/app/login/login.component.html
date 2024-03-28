@@ -1,0 +1,43 @@
+
+    <!-- <div>
+      <label for="username">שם משתמש</label>
+      <input type="text" id="username" name="username">
+    </div>
+    <div>
+      <label for="password">סיסמא</label>
+      <input type="password" id="password" name="password">
+    </div>
+
+    <button (click)="onclick()">אימות</button> -->
+
+    <!-- <form> -->
+        <!-- <div>
+          <label for="username">שם משתמש</label>
+          <input type="text" id="username" name="username" [(ngModel)]="username">
+        </div>
+        <div>
+          <label for="password">סיסמא</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password">
+        </div>
+        <button (click)="login()">אימות</button> -->
+    <!-- </form> -->
+
+    <div class="container">
+        <div class="form-container">
+          <div class="form-fields">
+            <mat-form-field>
+              <mat-label for="username">שם משתמש</mat-label>
+              <input matInput type="text" id="username" name="username" [(ngModel)]="username" required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label for="password">סיסמא</mat-label>
+              <input matInput type="password" id="password" name="password" [(ngModel)]="password" required>
+            </mat-form-field>
+          </div>
+          <button mat-raised-button color="primary" class="login-button" (click)="login()" [disabled]="!username || !password">אימות</button>
+        </div>
+      </div>
+      
+      
+      
+      
