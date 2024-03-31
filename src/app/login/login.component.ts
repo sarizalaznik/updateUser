@@ -18,13 +18,8 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   login() {
-    // Add your login logic here (e.g., authenticate user)
     
     // If login is successful, navigate to the update page
     this.router.navigate(['/update']);
   }
-// onclick(){
-//   console.log("dsfds");
-  
-// }
 }
